@@ -1,0 +1,70 @@
+BÀI TẬP POWERSHELL - QUẢN LÝ PROJECT
+
+PHẦN 1 – CLI VS GUI
+
+Câu 1:
+- Command: ls
+- Options/Flags: -Force
+- Argument: C:\Windows\Logs
+
+Câu 2:
+Terminal giúp điều khiển máy chủ Cloud từ xa bằng SSH, cài đặt và chạy chương trình mà không cần giao diện đồ họa.
+
+PHẦN 2 – ĐIỀU HƯỚNG
+
+Câu 3:
+cd .\quan-ly-sinh-vien
+
+Câu 4:
+C:\Users\student\Desktop\quan-ly-sinh-vien\src\main.py
+
+Câu 5:
+ls -Force ..\data
+
+PHẦN 3 – THAO TÁC FILE VÀ THƯ MỤC
+
+Câu 6:
+New-Item -ItemType Directory -Path .\quan-ly-sinh-vien\src, .\quan-ly-sinh-vien\data
+
+Câu 7:
+New-Item -ItemType File -Path .\quan-ly-sinh-vien\src\main.py, .\quan-ly-sinh-vien\src\utils.py, .\quan-ly-sinh-vien\README.md
+
+Câu 8:
+
+Đổi tên thư mục:
+Rename-Item .\quan-ly-sv quan-ly-sinh-vien
+
+Sao lưu project:
+Copy-Item .\quan-ly-sinh-vien .\backup-quan-ly-sinh-vien -Recurse
+
+PHẦN 4 – XỬ LÝ LỖI
+
+Câu 9:
+Nguyên nhân: Gõ sai tên thư mục, dùng scr thay vì src.
+Khắc phục: Gõ cd rồi nhấn Tab để tìm tên thư mục đúng.
+
+Câu 10:
+Nguyên nhân: Không đủ quyền truy cập hoặc file script bị chặn.
+Khắc phục: Kiểm tra file và quyền truy cập. Nếu file đáng tin, thử:
+
+Unblock-File .\setup.ps1
+.\setup.ps1
+
+Câu 11:
+Nguyên nhân: Thư mục old-version còn chứa file nên PowerShell hỏi xác nhận.
+
+Lệnh xóa:
+Remove-Item .\old-version -Recurse -Force
+
+Câu 12:
+
+- Dòng lỗi:
+FileNotFoundError: [Error 2] No such file or directory: 'data/input.csv'
+- Từ khóa lỗi:
+FileNotFoundError – không tìm thấy file.
+- Cần kiểm tra:
+Chương trình đang chạy trong thư mục src nên đường dẫn data/input.csv có thể bị sai.
+
+Cách khắc phục:
+cd ..
+python .\src\main.py

@@ -1,0 +1,104 @@
+
+
+PHẦN 1 – LĨNH VỰC CNTT VÀ ĐƠN VỊ LƯU TRỮ
+
+1. Lựa chọn nhân sự kỹ thuật
+
+Em chọn ứng viên B – Mạng máy tính / Quản trị hệ thống. Vì Cyber Arena cần người có khả năng lắp ráp, sửa chữa máy tính và cài đặt mạng để đảm bảo các máy chơi game, hệ thống livestream và ghi hình hoạt động ổn định. Đây là nhu cầu cần thiết hơn so với việc phát triển phần mềm đặt lịch ở thời điểm hiện tại.
+
+2. Sắp xếp đơn vị lưu trữ theo thứ tự tăng dần
+
+Byte < KB < MB < GB < TB
+
+
+PHẦN 2 – MÔ HÌNH IPSO VÀ LĨNH VỰC CNTT
+
+1. Áp dụng mô hình IPSO vào hệ thống quay và xem lại trận đấu
+
+- Input: Hình ảnh và âm thanh từ trận đấu.
+- Process: CPU xử lý và mã hóa video.
+- Output: Video trận đấu để xem lại.
+- Storage: SSD lưu trữ video đã quay.
+
+Giải thích:
+- Input (Đầu vào): Nhận hình ảnh và âm thanh từ trận đấu.
+- Process (Xử lý): Máy tính xử lý, mã hóa và tạo thành tệp video.
+- Output (Đầu ra): Hiển thị video để huấn luyện viên và tuyển thủ xem lại, phân tích.
+- Storage (Lưu trữ): SSD lưu video để có thể mở lại khi cần.
+
+2. Các lĩnh vực CNTT liên quan
+
+- Mạng máy tính: Giúp Cyber Arena kết nối Internet để livestream trận đấu lên YouTube.
+- Kỹ thuật phần mềm: Các phần mềm quay video, livestream và xem lại trận đấu giúp đội tuyển phân tích chiến thuật.
+
+
+PHẦN 3 – TÍNH TOÁN DUNG LƯỢNG VÀ TỐC ĐỘ MẠNG
+
+1. Tính dung lượng lưu trữ
+
+a. 20 trận tạo ra bao nhiêu MB?
+
+Dung lượng video của 20 trận là:
+20 x 500 = 10.000 MB
+
+Đáp án: 10.000 MB.
+
+b. Đổi sang GB
+
+Theo đề bài, 1 GB = 1024 MB.
+10.000 / 1024 = 9,77 GB
+
+Đáp án: Khoảng 9,77 GB.
+
+c. SSD 512 GB có đủ chứa video không? Sau tháng đầu còn trống bao nhiêu?
+
+Dung lượng còn trống:
+512 - 9,77 = 502,23 GB
+
+Vậy SSD 512 GB đủ chứa video của một tháng. Sau tháng đầu tiên, ổ SSD còn trống khoảng 502,23 GB, nếu bỏ qua dung lượng hệ điều hành và game như đề bài yêu cầu.
+
+2. Tính tốc độ mạng
+
+a. Mạng 100 Mbps tương đương bao nhiêu MB/s?
+
+Áp dụng công thức:
+MB/s = Mbps / 8
+100 / 8 = 12,5 MB/s
+
+Đáp án: Tối đa 12,5 MB/s.
+
+b. Tải lên video 200 MB mất tối thiểu bao nhiêu giây?
+
+Áp dụng công thức:
+Thời gian = Dung lượng / Tốc độ
+200 / 12,5 = 16 giây
+
+c. Vì sao thực tế thường lâu hơn ?
+
+Vì tốc độ upload thực tế có thể thấp hơn mức tối đa 100 Mbps do đường truyền không ổn định hoặc có nhiều thiết bị cùng sử dụng mạng.
+
+
+PHẦN 4 – PHẦN CỨNG VÀ MÔ HÌNH DIKW
+
+1. Nâng cấp RAM hay CPU ?
+
+Em chọn nâng cấp RAM. RAM giúp máy tính lưu trữ tạm thời dữ liệu của các chương trình đang chạy, nên khi vừa chơi game vừa quay video livestream, máy cần đủ RAM để xử lý nhiều tác vụ cùng lúc. Tuy nhiên, nếu CPU đang quá tải do xử lý game và mã hóa video thì nâng cấp CPU sẽ phù hợp hơn => vì vậy nên kiểm tra nguyên nhân giật lag trước khi quyết định nâng cấp.
+
+2. Áp dụng mô hình DIKW
+
+- Data (Dữ liệu):
+  Nội dung: Tuyển thủ bị chết ở phút 15–20 trong các trận đấu.
+  Giải thích: Đây là những dữ liệu được ghi nhận từ video trận đấu.
+
+- Information (Thông tin):
+  Nội dung: Tuyển thủ thường chết trong khoảng phút 15–20.
+  Giải thích: Dữ liệu được tổng hợp để nhận ra một tình trạng lặp lại.
+
+- Knowledge (Kiến thức):
+  Nội dung: Nguyên nhân là tuyển thủ thiếu tầm nhìn bản đồ.
+  Giải thích: Phân tích thông tin giúp huấn luyện viên xác định nguyên nhân của vấn đề.
+
+- Wisdom (Sự khôn ngoan):
+  Nội dung: Yêu cầu mua thêm mắt (Ward) cho trận sau.
+  Giải thích: Huấn luyện viên sử dụng kiến thức đã có để đưa ra quyết định cải thiện chiến thuật.
+

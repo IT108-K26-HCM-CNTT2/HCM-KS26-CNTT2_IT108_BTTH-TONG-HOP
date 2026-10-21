@@ -1,0 +1,77 @@
+BÀI TẬP POWERSHELL 
+
+PHẦN 1 – ĐỌC VÀ ĐỊNH VỊ TỆP TIN
+
+Câu 1:
+Get-Content .\logs\server.log
+
+Câu 2:
+Notepad có thể tải nhiều dữ liệu vào RAM khi mở file lớn nên dễ bị chậm hoặc treo. PowerShell có thể đọc và xử lý dữ liệu theo từng dòng nên phù hợp hơn khi lọc log lớn.
+
+Câu 3:
+Get-ChildItem -Path . -Filter *.log -Recurse
+
+PHẦN 2 – LỌC DỮ LIỆU VÀ PIPE
+
+Câu 4:
+Get-Content .\logs\server.log | Select-String "ERROR"
+
+Câu 5:
+- Tìm vị trí file:
+Get-ChildItem -Path . -Filter server.log -Recurse
+
+- Tìm dòng lỗi 404 trong file:
+Select-String -Path .\logs\server.log -Pattern "404"
+
+Lệnh dùng Pipe:
+Get-Content .\logs\server.log | Select-String "404"
+
+Câu 6:
+Get-ChildItem -Path . -Filter *.log -Recurse | Select-String -Pattern "INFO" -NotMatch
+
+PHẦN 3 – TOÁN TỬ CHUYỂN HƯỚNG
+
+Câu 7:
+Get-Content .\logs\server.log | Select-String "404" > .\reports\daily_report.txt
+
+Câu 8:
+Get-Content .\logs\server.log | Select-String "404" | Select-Object -Last 1 >> .\reports\daily_report.txt
+
+Nếu dùng nhầm > thì nội dung báo cáo cũ sẽ bị ghi đè. Toán tử >> dùng để ghi nối vào cuối file.
+
+PHẦN 4 – SHELL SCRIPT
+
+Câu 9:
+Write-Output "Dang loc log..."
+"=== LOG REPORT ===" > .\reports\daily_report.txt
+
+Câu 10:
+Nội dung file scripts\auto_report.ps1:
+
+# Loc cac dong loi 404 va tao bao cao
+Write-Output "Dang loc log..."
+"=== LOG REPORT ===" > .\reports\daily_report.txt
+Get-Content .\logs\server.log | Select-String "404" >> .\reports\daily_report.txt
+
+PHẦN 5 – CHẠY VÀ KIỂM TRA SCRIPT
+
+Câu 11:
+
+- Chạy script từ thư mục gốc devops-lab:
+.\scripts\auto_report.ps1
+
+
+- Kiểm tra nội dung báo cáo:
+Get-Content .\reports\daily_report.txt
+
+Câu 12:
+
+- Dòng lệnh nguy hiểm:
+Remove-Item -Recurse -Force C:\*
+
+Lệnh này có thể xóa hàng loạt file và thư mục trên ổ C, gây mất dữ liệu và làm hỏng hệ điều hành.
+
+- Sửa đường dẫn để chỉ xoá thư mục tạm của project:
+Remove-Item -Path .\temp\* -Recurse -Force
+
+Chúng ta chỉ chạy lệnh xóa khi đã kiểm tra đúng đường dẫn và chắc chắn muốn xóa nội dung trong thư mục temp.Nếu chúng ta không kiểm tra lại, có sai sót gì thì ta không hối hận kịp.

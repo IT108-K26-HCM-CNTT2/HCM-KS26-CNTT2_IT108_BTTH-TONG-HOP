@@ -1,0 +1,71 @@
+
+
+PHẦN 1 - KIẾN TRÚC HỆ ĐIỀU HÀNH
+
+1. Chức năng của hệ điều hành
+Đây là chức năng quản lý tiến trình và tài nguyên. Hệ điều hành phân chia CPU, RAM cho Word, Chrome, VS Code và Portal để các phần mềm chạy đồng thời. Nếu thiếu tài nguyên, máy tính có thể bị chậm.
+
+2. Shell và Kernel
+Khi double-click file, người dùng tương tác trước với Shell thông qua File Explorer. Shell tiếp nhận thao tác và yêu cầu mở file, còn Kernel quản lý tài nguyên và thực hiện các hoạt động hệ thống cần thiết. Người dùng ít tương tác trực tiếp với Kernel vì đây là phần lõi của hệ điều hành.
+
+PHẦN 2 - CÂY THƯ MỤC VÀ Ổ ĐĨA
+
+1. Xác định thư mục
+- Root Directory: D:\
+- Parent Directory: D:\Nam1\HocKy1\MonHoc\CongNgheThongTin\BaiTapLon\Session02\BaoCaoCuoiKy\Chuong1\Hinh anh
+- anh 1.jpg là lá vì đây là file, không phải thư mục.
+
+2. Vì sao không nên lưu dự án ở Desktop hoặc Downloads?
+- Dễ lẫn với file cá nhân, file tải về và khó quản lý.
+- Có thể mất dữ liệu khi ổ C gặp sự cố hoặc cài lại Windows nếu chưa sao lưu.
+Nên lưu dự án tại D:\02_Projects\BaiTapLonIT101\ và sao lưu thêm khi cần.
+
+PHẦN 3 - ĐƯỜNG DẪN PATH
+
+1. Absolute Path
+D:\Nam1\HocKy1\MonHoc\CongNgheThongTin\BaiTapLon\Session02\BaoCaoCuoiKy\Chuong1\Hinh anh\anh 1.jpg
+
+2. Relative Path chèn logo vào report.html
+<img src = "./assets/logo.png" alt="Logo">
+
+Dấu . đại diện cho thư mục hiện tại. Đường dẫn tương đối giúp dự án hoạt động trên máy khác nếu giữ nguyên cấu trúc thư mục.
+
+PHẦN 4 - QUY TẮC ĐẶT TÊN CHUẨN
+
+Tên file theo kebab-case:
+bao-cao-bai-tap-lon-it101(ban-cuoi)v2.docx
+
+Tên file sử dụng chữ thường, các từ cách nhau bằng dấu gạch ngang và không có dấu tiếng Việt.
+
+PHẦN 5 - TỔ CHỨC VÀ DỌN DẸP Ổ ĐĨA
+
+1. Đếm cấp thư mục
+Đường dẫn ban đầu có 9 cấp thư mục, vi phạm quy tắc 3 cấp vì cấu trúc quá sâu, khó quản lý.
+
+2. Thiết kế lại theo mô hình 4 trụ cột
+D:\
+├── 01_HocTap\
+├── 02_Projects\
+│   └── BaiTapLonIT101\
+│       └── Images\
+│           └── anh-1.jpg
+├── 03_Personal\
+└── 04_Media\
+
+Đường dẫn mới:
+D:\02_Projects\BaiTapLonIT101\Images\anh-1.jpg
+
+Thư mục 02_Projects là cấp 1, BaiTapLonIT101 là cấp 2, Images là cấp 3. Cấu trúc này giúp dữ liệu gọn gàng và dễ tìm kiếm.
+
+PHẦN 6 - ĐUÔI FILE VÀ FILE ẨN
+
+1. Nhận diện file đáng ngờ
+File hiển thị de-thi-dap-an.pdf có thể thực chất là de-thi-dap-an.pdf.exe. Kẻ xấu có thể lợi dụng việc Windows ẩn phần mở rộng để giả dạng file PDF.
+
+Cách kiểm tra:
+1. Mở File Explorer.
+2. Chọn View -> Show -> File name extensions.
+3. Kiểm tra phần mở rộng thật của file.
+
+Vì file được tải từ link lạ trên Zalo, không mở file. Hãy xác minh nguồn gửi và quét bằng Windows Security; nếu không xác minh được, nên xóa file.
+
